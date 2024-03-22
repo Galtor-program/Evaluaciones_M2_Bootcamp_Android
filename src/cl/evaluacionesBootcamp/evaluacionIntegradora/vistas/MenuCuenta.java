@@ -1,6 +1,8 @@
-package cl.evaluacionesBootcamp.evaluacionIntegradora.menus;
+package cl.evaluacionesBootcamp.evaluacionIntegradora.vistas;
 
+import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.Conversor;
 import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.CuentaBancaria;
+import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.Transacciones;
 import cl.evaluacionesBootcamp.evaluacionIntegradora.usuario.Persona;
 
 import java.util.Scanner;
@@ -19,6 +21,7 @@ public class MenuCuenta {
 
         while (flag == false) {
             try{
+                Logo.logoBrand();
                 System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
                 System.out.println("▀ Seleccione la operacion ▀");
                 System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
@@ -33,19 +36,19 @@ public class MenuCuenta {
                 opcion = input.nextInt();
                 switch (opcion) {
                     case 1:
-                        CuentaBancaria.sumaCuenta();
+                        Transacciones.sumaCuenta();
                         break;
                     case 2:
-                        CuentaBancaria.restaCuenta();
+                        Transacciones.restaCuenta();
                         break;
                     case 3:
-                        CuentaBancaria.convertirAEuros();
+                        Conversor.convertirAEuros();
                         break;
                     case 4:
-                        CuentaBancaria.converADolares();
+                        Conversor.converADolares();
                         break;
                     case 5:
-                        CuentaBancaria.convertirAYenes();
+                        Conversor.convertirAYenes();
                         break;
                     case 6:
                         flag = true;

@@ -1,9 +1,10 @@
 package cl.evaluacionesBootcamp.evaluacionIntegradora.usuario;
 
 import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.CuentaBancaria;
-import cl.evaluacionesBootcamp.evaluacionIntegradora.menus.MenuCuenta;
-import cl.evaluacionesBootcamp.evaluacionIntegradora.menus.Nuevo;
+import cl.evaluacionesBootcamp.evaluacionIntegradora.vistas.MenuCuenta;
+import cl.evaluacionesBootcamp.evaluacionIntegradora.vistas.Menu;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -36,6 +37,11 @@ public class Persona {
         this.saldocuenta= saldoCuentaBancaria;
 
     }
+
+    public Persona(String felipe, String toro, String number, int i) {
+    }
+
+
     //getter  de rut por ser private
 
     /**
@@ -51,7 +57,7 @@ public class Persona {
      * Ademas se genera un input para saber si el usuario quiere pasar
      * al menu de la cuenta para realizar gestiones.
      */
-    public void mostrarDatosDelUsuario(){
+    public static void mostrarDatosDelUsuario()  {
         Scanner input = new Scanner(System.in);
         String opcion;
         System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
@@ -70,7 +76,7 @@ public class Persona {
         if (opcion.equals("s")){
             MenuCuenta.mostrarMenuCuenta();
         }else{
-            Nuevo.crearNuevaCuenta();
+            Menu.menuInicio();
         }
 
     }
@@ -78,7 +84,7 @@ public class Persona {
     /**
      * Una vez que realice una modificacion a la cuenta llamaremos a este metodo para mostrar los cambios.
      */
-    public static void mostrarDatosActualizados() {
+    public static void mostrarDatosActualizados()  {
         Scanner input = new Scanner(System.in);
         String opcion;
         System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
@@ -97,7 +103,7 @@ public class Persona {
         if (opcion.equals("s")) {
             MenuCuenta.mostrarMenuCuenta();
         } else {
-            Nuevo.crearNuevaCuenta();
+            Menu.menuInicio();
         }
     }
 }

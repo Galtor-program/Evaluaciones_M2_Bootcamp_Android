@@ -1,8 +1,9 @@
-package cl.evaluacionesBootcamp.evaluacionIntegradora.menus;
+package cl.evaluacionesBootcamp.evaluacionIntegradora.vistas;
 
 import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.CuentaBancaria;
 import cl.evaluacionesBootcamp.evaluacionIntegradora.usuario.Persona;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,7 @@ public class GeneradordeCuentas {
     /**
      * Creacion de los datos de la cuenta.
      */
-    public static void crearDatosDeLaCuenta(){
+    public static void crearDatosDeLaCuenta()  {
         Scanner input = new Scanner(System.in);
         String nombreUsuario;
         String apellidoUsuario;
@@ -46,6 +47,7 @@ public class GeneradordeCuentas {
          */
         CuentaBancaria cuentaBancaria =  new CuentaBancaria(saldoCuenta);
         Persona persona =  new Persona(nombreUsuario,apellidoUsuario,rutUsuario, cuentaBancaria);
+        Persona admin = new Persona("Felipe","Toro","12345",2000);
         /**
          * llamamos al metodo para que nos muestre los datos de la cuenta.
          */
