@@ -18,19 +18,23 @@ public class GeneradordeCuentas {
         Scanner input = new Scanner(System.in);
         String nombreUsuario;
         String apellidoUsuario;
+        int edadUsuario;
         String rutUsuario;
         int saldoCuenta = 0;
 
         /**
          * Solicitamos los datos para crear el usuario y la cuenta
          */
-        System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-        System.out.println("▓ Generador de cuentas ▓");
-        System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+        Logo.logoBrand();
+        System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+        System.out.println("▓ Generador de cuentas Bancarias ▓");
+        System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("Ingrese Nombre del usuario: " );
         nombreUsuario = input.next();
         System.out.println("Ingrese Apellido del usuario: ");
         apellidoUsuario = input.next();
+        System.out.println("Ingrese su edad");
+        edadUsuario=input.nextInt();
         System.out.println("Ingrese rut del usuario: ");
         rutUsuario = input.next();
         System.out.println("Ingrese Saldo inicial en la cuenta");
@@ -46,8 +50,8 @@ public class GeneradordeCuentas {
          * Enviamos los datos de nombreUsuario, apellidoUsuario, rutUsuario a nuestra clase persona
          */
         CuentaBancaria cuentaBancaria =  new CuentaBancaria(saldoCuenta);
-        Persona persona =  new Persona(nombreUsuario,apellidoUsuario,rutUsuario, cuentaBancaria);
-        Persona admin = new Persona("Felipe","Toro","12345",2000);
+        Persona persona =  new Persona(nombreUsuario,apellidoUsuario, edadUsuario,rutUsuario, cuentaBancaria);
+
         /**
          * llamamos al metodo para que nos muestre los datos de la cuenta.
          */

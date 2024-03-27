@@ -1,10 +1,8 @@
 package cl.evaluacionesBootcamp.evaluacionIntegradora.usuario;
 
 import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.CuentaBancaria;
-import cl.evaluacionesBootcamp.evaluacionIntegradora.vistas.MenuCuenta;
-import cl.evaluacionesBootcamp.evaluacionIntegradora.vistas.Menu;
+import cl.evaluacionesBootcamp.evaluacionIntegradora.vistas.Menus;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -14,6 +12,7 @@ public class Persona {
 
     public static String nombreUsuario;
     public static String apellidoUsuario;
+    public static int edadUsuario;
     private static String rutUsuario;
     public static CuentaBancaria saldocuenta;
 
@@ -30,17 +29,14 @@ public class Persona {
      * @param rutUsuario recibimos el rut del usuario desde el menu inicial
      * @param saldoCuentaBancaria recimibos el saldo de la cuenta desde el menu inicial
      */
-    public Persona(String nombreUsuario, String apellidoUsuario, String rutUsuario, CuentaBancaria saldoCuentaBancaria) {
+    public Persona(String nombreUsuario, String apellidoUsuario, int edadUsuario, String rutUsuario, CuentaBancaria saldoCuentaBancaria) {
         this.nombreUsuario = nombreUsuario;
         this.apellidoUsuario = apellidoUsuario;
+        this.edadUsuario = edadUsuario;
         this.rutUsuario = rutUsuario;
         this.saldocuenta= saldoCuentaBancaria;
 
     }
-
-    public Persona(String felipe, String toro, String number, int i) {
-    }
-
 
     //getter  de rut por ser private
 
@@ -65,18 +61,17 @@ public class Persona {
         System.out.println("■ NOMBRE: " +nombreUsuario );
         System.out.println("■ APELLIDO: "+apellidoUsuario);
         System.out.println("■ RUT: " +getRutUsuario());
+        System.out.println("■ EDAD:" +edadUsuario);
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("   SU SALDO EN ESTOS MOMENTOS ES  ");
-        System.out.println("       " +saldocuenta.saldoCuenta    );
+        System.out.println("       " +Math.round(saldocuenta.saldoCuenta));
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("▓ Desea realizar alguna operacion? S/N:   ▓");
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         opcion = input.nextLine().toLowerCase();
         if (opcion.equals("s")){
-            MenuCuenta.mostrarMenuCuenta();
-        }else{
-            Menu.menuInicio();
+            Menus.mostrarMenuCuenta();
         }
 
     }
@@ -94,16 +89,14 @@ public class Persona {
         System.out.println("■ RUT: " + getRutUsuario());
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("   SU SALDO EN ESTOS MOMENTOS ES  ");
-        System.out.println("       " + saldocuenta.saldoCuenta);
+        System.out.println("       " +Math.round(saldocuenta.saldoCuenta));
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("▓ Desea realizar alguna operacion? S/N:   ▓");
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         opcion = input.nextLine().toLowerCase();
         if (opcion.equals("s")) {
-            MenuCuenta.mostrarMenuCuenta();
-        } else {
-            Menu.menuInicio();
+            Menus.mostrarMenuCuenta();
         }
     }
 }
