@@ -7,7 +7,7 @@ import cl.evaluacionesBootcamp.evaluacionIntegradora.usuario.Persona;
 import java.util.Scanner;
 
 /**
- * Menu para inicializar la cuenta
+ * Clase que contiene los menus de la aplicacion
  */
 public class Menus {
     /**
@@ -18,7 +18,9 @@ public class Menus {
         Scanner input = new Scanner(System.in);
         int opcion;
         boolean flag = false;
-
+        /**
+         * Generamos un While para que se mantenga en el menu hasta que demos salir o entremos al login.
+         */
         while (flag == false) {
             try {
                 Logo.logoBrand();
@@ -53,6 +55,10 @@ public class Menus {
 
     }
 
+    /**
+     * Menu del login que llama los metodos Credenciales.Email y Credenciales.Password para verificar que el usuario y
+     * password sean correctos
+     */
     public static void Login() {
         Logo.logoBrand();
         System.out.println(" ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
@@ -65,11 +71,19 @@ public class Menus {
         Credenciales.Acceso();
     }
 
+    /**
+     * Metodo al cual ingresamos una vez que ha creado la cuenta y que nos permite llamar
+     * a nuestras operaciones de Transaccion y de Conversion.
+     */
     public static void mostrarMenuCuenta () {
         int opcion = 0;
         boolean flag = false;
         Scanner input = new Scanner(System.in);
         Conversor conversor = new Conversor();
+        /**
+         * Generamos un While para que se mantenga en el menu hasta que demos salir o solicitemos alguna
+         * operacion bancaria.
+         */
         while (flag == false) {
             try {
                 Logo.logoBrand();
@@ -77,10 +91,13 @@ public class Menus {
                 System.out.println("▀ Seleccione la operacion ▀");
                 System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
                 System.out.println("▀     1.- Cargar Saldo    ▀");
-                System.out.println("▀     2.- Restar Saldo    ▀");
+                System.out.println("▀     2.- Retirar Saldo   ▀");
+                System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
+                System.out.println("▀▀▀▀▀▀▀▀▀CONVERSORES▀▀▀▀▀▀▀");
                 System.out.println("▀     3.- Pasar a Euro    ▀");
                 System.out.println("▀     4.- Pasar a Dolar   ▀");
                 System.out.println("▀     5.- Pasar a Yen     ▀");
+                System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
                 System.out.println("▀     6.- Salir           ▀");
                 System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
 

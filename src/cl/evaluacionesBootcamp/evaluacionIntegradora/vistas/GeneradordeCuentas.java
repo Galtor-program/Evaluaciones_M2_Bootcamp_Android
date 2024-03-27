@@ -1,6 +1,7 @@
 package cl.evaluacionesBootcamp.evaluacionIntegradora.vistas;
 
 import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.CuentaBancaria;
+import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.ValidadorDatos;
 import cl.evaluacionesBootcamp.evaluacionIntegradora.usuario.Persona;
 
 import java.io.IOException;
@@ -39,11 +40,28 @@ public class GeneradordeCuentas {
         rutUsuario = input.next();
         System.out.println("Ingrese Saldo inicial en la cuenta");
 
-            if (input.hasNextInt()) {
-                saldoCuenta = input.nextInt();
-            }else {
-                System.out.println("Debe ingresar un valor numero valido la cuenta se dejara en CERO");
-            }
+        /**
+         * Valida un numero para la cuenta
+         */
+        if (input.hasNextInt()) {
+            saldoCuenta = input.nextInt();
+        } else {
+            System.out.println("Debe ingresar un valor número válido. La cuenta se dejará en CERO");
+        }
+        /**
+         * Implementamos la interface para validar que se cumplan los requerimientos minimos
+         */
+        ValidadorDatos validador = new ValidadorDatos();
+        if (!validador.validarEdad(edadUsuario)) {
+            System.out.println("Lo sentimos, debe ser mayor de 18 años para crear una cuenta. Intente nuevamente");
+            GeneradordeCuentas.crearDatosDeLaCuenta();
+        }
+
+        if (!validador.validarSaldo(saldoCuenta)) {
+            System.out.println("Lo sentimos, el saldo inicial debe ser al menos $100000 CLP. Intente nuevamente ");
+            GeneradordeCuentas.crearDatosDeLaCuenta();
+        }
+
 
         /**
          * Enviamos los datos de saldoCuenta a nuestra clase Cuenta

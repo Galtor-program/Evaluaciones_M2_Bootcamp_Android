@@ -24,10 +24,11 @@ public class Persona {
 
     /**
      *
-     * @param nombreUsuario recibimos el nombre de usuario desde el menu inicial
-     * @param apellidoUsuario recibimos el apellido del usuario desde el menu inicial
-     * @param rutUsuario recibimos el rut del usuario desde el menu inicial
-     * @param saldoCuentaBancaria recimibos el saldo de la cuenta desde el menu inicial
+     * @param nombreUsuario recibimos el nombre de usuario desde el GeneradorDeCuentas
+     * @param apellidoUsuario recibimos el apellido del usuario desde el GeneradorDeCuentas
+     * @param rutUsuario recibimos el rut del usuario desde el GeneradorDeCuentas
+     * @param edadUsuario recibimos la edad del usuario desde el GeneradorDeCuentas
+     * @param saldoCuentaBancaria recimibos el saldo de la cuenta desde el GeneradorDeCuentas
      */
     public Persona(String nombreUsuario, String apellidoUsuario, int edadUsuario, String rutUsuario, CuentaBancaria saldoCuentaBancaria) {
         this.nombreUsuario = nombreUsuario;
@@ -77,7 +78,7 @@ public class Persona {
     }
 
     /**
-     * Una vez que realice una modificacion a la cuenta llamaremos a este metodo para mostrar los cambios.
+     * Una vez que realice una modificacion a la cuenta llamaremos a este metodo para mostrar los cambios de SALDO.
      */
     public static void mostrarDatosActualizados()  {
         Scanner input = new Scanner(System.in);
