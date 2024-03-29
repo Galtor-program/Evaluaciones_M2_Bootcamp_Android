@@ -8,5 +8,9 @@ Colección de trabajos para el módulo 2 del bootcamp android
 * Trabajo de Mascotas  Link : https://github.com/Galtor-program/Evaluaciones_M2_Bootcamp_Android/tree/master/src/cl/evaluacionesBootcamp/mascotas
 *********************************************************
 * Evaluacion Integradora Alka Wallet Link:  https://github.com/Galtor-program/Evaluaciones_M2_Bootcamp_Android/tree/master/src/cl/evaluacionesBootcamp/evaluacionIntegradora
-* ⚠️  Ejecutamos desde la clase main con las credenciales; correo:admin@admin.cl, password:password123.
-* 
+* ⚠️ Para ingresar al sistema usar las credenciales
+*          * email: admin@admin.cl
+*          * password: password123
+💼 Link de la documentacion de JAVADOC(se debe descar el row para revisar el docx) :
+📷 Link a la imagen de los diagramas de flujo : 
+🖥️ Link al Jar :
