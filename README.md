@@ -11,6 +11,6 @@ Colección de trabajos para el módulo 2 del bootcamp android
 * ⚠️ Para ingresar al sistema usar las credenciales
 *          * email: admin@admin.cl
 *          * password: password123
-💼 Link de la documentacion de JAVADOC(se debe descar el row para revisar el docx) :
-📷 Link a la imagen de los diagramas de flujo : 
-🖥️ Link al Jar :
+*💼 Link de la documentacion de JAVADOC(se debe descar el row para revisar el docx) :
+*📷 Link a la imagen de los diagramas de flujo : 
+*🖥️ Link al Jar :
