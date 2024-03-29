@@ -3,7 +3,10 @@
  */
 package cl.evaluacionesBootcamp.evaluacionIntegradora;
 
-import cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta.CuentaBancaria;
+/**
+ * @author Felipe Toro G.
+ */
+
 import cl.evaluacionesBootcamp.evaluacionIntegradora.vistas.Menus;
 
 /**
@@ -16,11 +19,11 @@ public class AlkaWallet {
      * metodo main
      */
     public static void main(String[] args )  {
-        CuentaBancaria.saldoCuenta=0;
+
 
         /**
-         * llamando al menu para ingresar al sistema o crear una nueva cuenta.
+         * llamando al menu de Login
          */
-       Menus.menuInicio();
+        Menus.menuLogin();
     }
 }

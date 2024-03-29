@@ -1,80 +1,41 @@
 package cl.evaluacionesBootcamp.evaluacionIntegradora.cuenta;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import cl.evaluacionesBootcamp.evaluacionIntegradora.interfaces.ICuentaBancaria;
 
 /**
- * Clase cuenta donde tendremos el saldo de la cuenta y algunos metodos
+ * Clase principal de Cuenta Bancaria
  */
-public class CuentaBancaria {
-     /**
-     * variable con nuestro saldo cuenta
-     */
-    public static double saldoCuenta;
-
-
-    static Scanner input = new Scanner(System.in);
-    /**
-     * variable para realizar las operaciones
-     */
-    public static int i;
+public class CuentaBancaria implements ICuentaBancaria {
+    double saldo;
 
     /**
-     * Constructor vacio
+     *
+     * @param saldoInicial recibimos el saldo inicial
      */
-    public CuentaBancaria() {
+    public CuentaBancaria(double saldoInicial) {
+
+        this.saldo = saldoInicial;
     }
 
     /**
-     * @param saldoCuenta aca recibimos el saldo inicial de la cuenta del usuario
+     *
+     * @param cantidad recibmos la cantidad que va a depositar el usuario la cual obviamente debe ser mayor a 0
      */
-    public CuentaBancaria(int saldoCuenta) {
-        this.saldoCuenta = saldoCuenta;
-    }
-    public static double sumaCuenta() {
-        int i;
-        boolean inputValido = false;
-        do {
-            try {
-                System.out.println("Ingrese la cantidad que desea agregar a la cuenta:");
-                i = input.nextInt();
-                saldoCuenta += i;
-                inputValido = true;
-                System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-                System.out.println("   EL SALDO BANCARIO ES  ");
-                System.out.println("       $" + Math.round(saldoCuenta) + " CLP");
-                System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-            } catch (InputMismatchException e) {
-                System.out.println("Por favor, ingrese solo números enteros.");
-                input.nextLine();
-            }
-        } while (!inputValido);
-        return saldoCuenta;
+    public void depositar(double cantidad) {
+        if (cantidad > 0) {
+            saldo += cantidad;
+        } else {
+            System.out.println("La cantidad a depositar debe ser positiva.");
+        }
     }
 
     /**
-     * @return realizamos la suma de saldo y la devolvemos como saldo cuenta
+     *
+     * @return envia el saldo de la cuenta a donde lo necesitemos
      */
-    public static double restaCuenta() {
-        int i;
-        boolean montoValido = false;
-        do {
-            try {
-                System.out.println("Ingrese la cantidad que desea agregar a la cuenta:");
-                i = input.nextInt();
-                saldoCuenta -= i;
-                montoValido = true;
-                System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-                System.out.println("      EL SALDO BANCARIO ES        ");
-                System.out.println("       $" + Math.round(saldoCuenta) + " CLP");
-                System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-            } catch (InputMismatchException e) {
-                System.out.println("Por favor, ingrese solo números enteros.");
-                input.nextLine();
-            }
-        } while (!montoValido);
-        return saldoCuenta;
+    public double obtenerSaldo() {
+
+        return saldo;
     }
-
-
 }
+
