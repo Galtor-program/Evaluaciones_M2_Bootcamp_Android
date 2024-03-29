@@ -17,7 +17,7 @@ public class ConversorDivisas  implements IConversorDivisas {
      */
     public void valorEuro(double saldo) {
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-        System.out.println("El saldo en euros es: " + (saldo * VALOR_EURO) + " €");
+        System.out.println("El saldo en euros es: " + (saldo * VALOR_EURO) + " £");
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
     }
 
