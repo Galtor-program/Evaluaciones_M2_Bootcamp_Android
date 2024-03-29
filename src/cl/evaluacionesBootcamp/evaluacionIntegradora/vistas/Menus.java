@@ -117,7 +117,7 @@ public class Menus {
          * llamamos al metodo validador para revisar la edad y el saldo
          */
         ValidacionUsuario validador = new ValidacionUsuario();
-        System.out.print("Ingrese los nombres del usuario: ");
+        System.out.print("Ingrese nombre y apellido del usuario: ");
         String nombres = input.nextLine();
 
         System.out.print("Ingrese la edad del usuario: ");
@@ -212,7 +212,7 @@ public class Menus {
     public static void mostrarInformaciondelUsuario(){
         System.out.println("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         System.out.println("▓ Estado de la Cuenta Bancaria ▓");
-        System.out.println("▓ Nombres :"+ usuario.getNombres());
+        System.out.println("▓ Nombre Apellido :"+ usuario.getNombres());
         System.out.println("▓ Edad: " + usuario.getEdad());
         System.out.println("▓ Rut: " + usuario.getRut());
         System.out.println("▓ Saldo: " + usuario.getCuenta().obtenerSaldo());

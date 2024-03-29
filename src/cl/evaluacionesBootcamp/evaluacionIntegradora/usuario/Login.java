@@ -9,7 +9,12 @@ public class Login implements ILogin {
     private final String EMAIL_CORRECTO = "admin@admin.cl";
     private final String PASSWORD_CORRECTO = "password123";
 
-    // Implementamos el método de la interfaz
+    /**
+     *
+     * @param email indicamos que necesitamos el email
+     * @param password indicamos que necesitamos la password
+     * @return true o false
+     */
     public boolean verificarCredenciales(String email, String password) {
         return email.equals(EMAIL_CORRECTO) && password.equals(PASSWORD_CORRECTO);
     }
